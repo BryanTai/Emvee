@@ -5,6 +5,24 @@ class PlayerCard {
     constructor(){
         this.advancements = [null,null,null];
         this.symbols = new Symbols();
+        this.bitmap = new createjs.Bitmap(preload.getResult("playerCard"));
+        this.bitmap.visible = false;
+        
+        this.bitmap.addEventListener("pressmove", this.onPressMove.bind(this));
+    }
+    
+    onDblClick(){
+        
+    }
+    
+    onPressMove(event){
+        this.bitmap.x = stage.mouseX - CARD_HALF_WIDTH;
+        this.bitmap.y = stage.mouseY - CARD_HALF_HEIGHT;
+        stage.update();
+    }
+    
+    highlightCard(){
+        
     }
     
     addAdvancement(advancement){
@@ -14,6 +32,7 @@ class PlayerCard {
         }
         this.advancements[pos] = advancement;
         //TODO MERGE SYMBOLS HERE
+        //TODO ADD Advancements to bitmap here
         return true;
     }
     

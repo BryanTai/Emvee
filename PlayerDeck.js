@@ -2,15 +2,14 @@
 //Top card is the On Deck card
 
 var STARTING_EMPTY = 8;
-var STARTING_FERTILE = 6; //TODO ask Rachel for values
+var STARTING_FERTILE = 6;
 var STARTING_CURSED= 6;
 
 class PlayerDeck {
-    
-    
     constructor(deckColor) {
-        this.deckColor = deckColor;
+        this.deckColor = "player_back_"+deckColor;
         this.cards = this.newDeck();
+        this.bitmap = new createjs.Bitmap(preload.getResult(this.deckColor));
     }
     
     newDeck(){
@@ -42,5 +41,6 @@ class PlayerDeck {
     
     getSearchableCards(){
         //TODO Do not include onDeckCard
+        
     }
 }

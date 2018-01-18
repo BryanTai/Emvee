@@ -4,6 +4,7 @@ class ValeCard {
         this.abilities = abilities;
         this.vp = vp;
         this.cost = cost;
+        this.bitmap = new createjs.Bitmap(preload.getResult("valeCard"));
     }
     
     drawCard(){

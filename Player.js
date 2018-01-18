@@ -3,7 +3,7 @@
 class Player {
     constructor(name, deckColor) {
         this.name = name;
-        this.playerDeck = new PlayerDeck(deckColor);
+        this.deck = new PlayerDeck(deckColor);
         this.discardPile = [];
         this.currentHand = [];
         this.vp = 0;
