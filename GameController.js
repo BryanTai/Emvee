@@ -134,11 +134,11 @@ function drawDeckAtPosition(deck, x, y){
 }
 
 function drawCardShapeAtPosition(cardToDraw, x, y){
-    var card = cardToDraw.bitmap;
-    card.visible = true;
-    card.x = x;
-    card.y = y;
+    var displayObject = cardToDraw.displayObject;
+    displayObject.visible = true;
+    displayObject.x = x;
+    displayObject.y = y;
     
     //TODO draw Advancements
-    stage.addChild(card);
+    stage.addChild(displayObject);
 }

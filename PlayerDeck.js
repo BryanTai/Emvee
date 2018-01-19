@@ -9,23 +9,23 @@ class PlayerDeck {
     constructor(deckColor) {
         this.deckColor = "player_back_"+deckColor;
         this.cards = this.newDeck();
-        this.bitmap = new createjs.Bitmap(preload.getResult(this.deckColor));
+        this.displayObject = new createjs.Bitmap(preload.getResult(this.deckColor));
     }
     
     newDeck(){
         var toReturn = [];
         for(var e = 0; e < STARTING_EMPTY; e++){
-            toReturn.push(new PlayerCard());
+            toReturn.push(new PlayerCard(e));
         }
         for(var c = 0; c < STARTING_CURSED; c++){
-            var newCard = new PlayerCard();
+            var newCard = new PlayerCard(c+STARTING_EMPTY);
             //newCard.addAdvancement(new Advancement
             
             toReturn.push(newCard);
             
         }
         for(var f = 0; f < STARTING_FERTILE; f++){
-            toReturn.push(new PlayerCard());
+            toReturn.push(new PlayerCard(f+STARTING_EMPTY+STARTING_FERTILE));
         }
         
         return toReturn;

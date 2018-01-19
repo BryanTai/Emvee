@@ -7,15 +7,18 @@ var POSITION = {
 }
 var ADVANCE_HEIGHT = 80;
 
-class Advancement {
+class Advancement extends Card{
     constructor(name,level,position,abilities,symbols){
-        this.name = name;
+        super(name,"advance");
         this.level = level;
         this.position = position;
         this.abilities = abilities;
         this.symbols = symbols;
         
-        this.bitmap = this.createBitmap();
+        this.displayObject = this.createBitmap();
+        this.displayObject.visible = false;
+        
+        this.displayObject.addEventListener("pressmove", this.onPressMove.bind(this));
     }
     
     createBitmap(){
