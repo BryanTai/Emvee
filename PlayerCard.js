@@ -5,7 +5,7 @@ class PlayerCard {
     constructor(){
         this.advancements = [null,null,null];
         this.symbols = new Symbols();
-        this.bitmap = new createjs.Bitmap(preload.getResult("playerCard"));
+        this.bitmap = new createjs.Bitmap(preload.getResult("player_card"));
         this.bitmap.visible = false;
         
         this.bitmap.addEventListener("pressmove", this.onPressMove.bind(this));
